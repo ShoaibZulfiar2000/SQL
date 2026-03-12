@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Order System</h2>
+    <!-- Display area jahan order number show hoga -->
+    <p id="order-display">Your order is: 0</p>
+
+    <!-- Buttons -->
+    <button onclick="addOrder()">Add Order (+)</button>
+    <button onclick="removeOrder()">Remove Order (-)</button>
+
+    <script>
+        // Order count ko track karne ke liye variable
+        let count = 0;
+
+        // Function jo order barhaye ga
+        function addOrder() {
+            count++; // Increment operator (++) se 1 jama hota hai
+            updateDisplay();
+        }
+
+        // Function jo order kam kare ga
+        function removeOrder() {
+            if (count > 0) { // Check ke order 0 se niche na jaye
+                count--; // Decrement operator (--) se 1 minus hota hai
+                updateDisplay();
+            }
+        }
+
+        // Screen pr text update karne ka function
+        function updateDisplay() {
+            document.getElementById("order-display").innerHTML = "Your order is: " + count;
+        }
+    </script>
+
+</body>
+</html>
